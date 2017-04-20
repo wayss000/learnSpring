@@ -9,7 +9,8 @@ public class Main {
         //两种创建方式
         //绝对路径创建方式
         ApplicationContext fileContext = new FileSystemXmlApplicationContext
-              ("D:/code/learnSpring/SpringApplicationContext/src/main/resources/Beans.xml");
+//              ("D:/code/learnSpring/SpringApplicationContext/src/main/resources/Beans.xml");
+        ("E:/code/java-web/learnSpring/SpringApplicationContext/src/main/resources/Beans.xml");
         HelloWorld obj1 = (HelloWorld) fileContext.getBean("helloWorld");
         obj1.getMessage();
         
