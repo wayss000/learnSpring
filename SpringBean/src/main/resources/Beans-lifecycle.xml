@@ -10,5 +10,9 @@
        init-method="init" destroy-method="destroy">
        <property name="message" value="Hello World!"/>
    </bean>
+   
+   <!-- 下面这个bean是为postProcessor包中的后置处理器配置的，在Main2.java中用到,
+   如果只运行Main.java，测试init和destroy方法，则可以将下面的bean注释 -->
+   <bean class="pers.wayss.springBean.postProcessor.InitHelloPostProcessor" />
 
 </beans>
