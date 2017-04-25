@@ -1,5 +1,10 @@
 package pers.wayss.springBean;
 
+/**
+ * 带有init和destroy方法的bean,演示bean初始化的顺序
+ * @author Wayss
+ * @date 2017年4月25日
+ */
 public class BeanLifeCycle {
     private String message;
 
