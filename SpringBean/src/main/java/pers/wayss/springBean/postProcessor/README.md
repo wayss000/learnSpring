@@ -1,0 +1,9 @@
+Bean后置处理器
+
+InitHelloPostProcessor类实现了BeanPostProcessor接口中的两个方法，分别是：
+
+postProcessBeforeInitialization()
+该方法在注入的Bean的init方法执行前执行
+
+postProcessAfterInitialization()
+该方法在注入的Bean的init方法执行后执行

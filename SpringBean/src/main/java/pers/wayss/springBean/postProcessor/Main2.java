@@ -11,5 +11,14 @@ public class Main2 {
         BeanLifeCycle obj = (BeanLifeCycle) context.getBean("beanLifeCycle");
         obj.getMessage();
         context.registerShutdownHook();
-     }
-  }
+    }
+}
+
+/*
+ * 程序的执行结果：
+BeforeInitialization : beanLifeCycle
+Bean is going through init.
+AfterInitialization : beanLifeCycle
+Your Message : Hello World!
+Bean will destroy now.
+ */
