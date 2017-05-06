@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 手动设置属性 -->
+
+<!-- 
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="textEditor" class="pers.wayss.beanAutowire.TextEditor">
+       <property name="spellChecker" ref="spellChecker" />
+       <property name="name" value="Generic Text Editor" />
+   </bean>
+
+   <bean id="spellChecker" class="pers.wayss.beanAutowire.SpellChecker">
+   </bean>
+
+</beans>
+-->
+
+<!-- 自动装配 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 可以看出，用autowire标签标示自动注入， 无需手动添加spellChecker属性了，spring会自动从beans标签中找id为spellChecker的bean。 
+		但是，int,string等基本类型不能自动装配 -->
+   <bean id="textEditor" class="pers.wayss.beanAutowire.TextEditor" 
+      autowire="byName">
+      <property name="name" value="Generic Text Editor" />
+   </bean>
+
+   <!-- Definition for spellChecker bean -->
+   <bean id="spellChecker" class="pers.wayss.beanAutowire.SpellChecker">
+   </bean>
+
+</beans>

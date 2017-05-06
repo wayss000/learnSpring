@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for textEditor bean -->
+   <bean id="textEditor" class="pers.wayss.beanAutowire.TextEditor" 
+      autowire="byType">
+      <property name="name" value="Generic Text Editor" />
+   </bean>
+
+   <!-- byType方式自动注入，需要bean的id为TextEditor的类型，因此SpellChecker首字母需要大写(可能是习惯规定，我试了小写也可以运行) -->
+   <bean id="SpellChecker" class="pers.wayss.beanAutowire.SpellChecker">
+   </bean>
+
+</beans>
