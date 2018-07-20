@@ -12,9 +12,5 @@ public class Main {
         objA.getMessage1();
         objA.getMessage2();
 
-        HelloInheritance objB = (HelloInheritance) context.getBean("helloInheritance");
-        objB.getMessage1();
-        objB.getMessage2();
-        objB.getMessage3();
      }
   }

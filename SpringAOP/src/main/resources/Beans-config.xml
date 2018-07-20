@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
    <bean id="helloWorld" class="pers.wayss.springAOP.interceptor.HelloWorld">
       <property name="message1" value="Hello World!"/>
       <property name="message2" value="Hello Second World!"/>
    </bean>
 
-   <bean id="helloInheritance" class="pers.wayss.springAOP.interceptor.HelloInheritance" parent="helloWorld">
-      <property name="message1" value="Hello Inheritance!"/>
-      <property name="message3" value="Namaste Inheritance!"/>
-   </bean>
+   <!-- 开启注解扫描 -->
+   <context:component-scan base-package="pers.wayss.springAOP.interceptor"></context:component-scan>
+
+   <!-- 开启动态代理 -->
+   <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 </beans>
