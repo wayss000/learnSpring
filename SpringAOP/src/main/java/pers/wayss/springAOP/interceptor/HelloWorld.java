@@ -15,10 +15,12 @@ public class HelloWorld {
        this.message2  = message;
     }
 
+    //这是方法就是一个连接点（Join point）
     public void getMessage1(){
        System.out.println("World Message1 : " + message1);
     }
 
+    //这是方法就是一个连接点（Join point）
     @Anno
     public void getMessage2(){
        System.out.println("World Message2 : " + message2);
